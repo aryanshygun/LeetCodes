@@ -77,7 +77,7 @@ def get_authorization_url():
         "response_type": "code",
         "client_id": CLIENT_ID,
         "redirect_uri": REDIRECT_URI,
-        "scope": "w_member_social",
+        "scope": "openid profile w_member_social",
         "state": "leetcode-linkedin",
     }
 

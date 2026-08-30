@@ -26,7 +26,7 @@ def get_headers(access_token):
 
 def get_member_urn(access_token):
     response = requests.get(
-        f"{LINKEDIN_API}/v2/me",
+        f"{LINKEDIN_API}/v2/userinfo",
         headers={
             "Authorization": f"Bearer {access_token}",
         },
@@ -37,7 +37,7 @@ def get_member_urn(access_token):
 
     data = response.json()
 
-    return f"urn:li:person:{data['id']}"
+    return f"urn:li:person:{data['sub']}"
 
 def initialize_image_upload(access_token, member_urn):
     response = requests.post(
