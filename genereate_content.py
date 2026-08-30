@@ -1,8 +1,8 @@
 import hashlib
 from pathlib import Path
 
-from captions import generate_caption
-from images import THEMES, generate_image
+from helper.captions import generate_caption
+from helper.images import THEMES, generate_image
 
 FINISHED_DIR = Path("finished")
 CAPTIONS_DIR = Path("captions")

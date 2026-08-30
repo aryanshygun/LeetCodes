@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from linkedin import post
+from helper.linkedin import post
 
 
 BASE_DIR = Path(__file__).resolve().parent
