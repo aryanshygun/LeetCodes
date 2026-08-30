@@ -3,6 +3,7 @@ from pathlib import Path
 
 import requests
 
+
 LINKEDIN_API = "https://api.linkedin.com"
 LINKEDIN_VERSION = os.getenv("LINKEDIN_VERSION", "202608")
 
@@ -33,11 +34,16 @@ def get_member_urn(access_token):
         timeout=30,
     )
 
-    response.raise_for_status()
+    if not response.ok:
+        raise RuntimeError(
+            f"LinkedIn userinfo failed ({response.status_code}):\n"
+            f"{response.text}"
+        )
 
     data = response.json()
 
     return f"urn:li:person:{data['sub']}"
+
 
 def initialize_image_upload(access_token, member_urn):
     response = requests.post(
@@ -46,11 +52,20 @@ def initialize_image_upload(access_token, member_urn):
             **get_headers(access_token),
             "Content-Type": "application/json",
         },
-        json={"initializeUploadRequest": {"owner": member_urn}},
+        json={
+            "initializeUploadRequest": {
+                "owner": member_urn
+            }
+        },
         timeout=30,
     )
 
-    response.raise_for_status()
+    if not response.ok:
+        raise RuntimeError(
+            f"LinkedIn image initialization failed "
+            f"({response.status_code}):\n"
+            f"{response.text}"
+        )
 
     data = response.json()["value"]
 
@@ -61,7 +76,9 @@ def upload_image(access_token, member_urn, image_path):
     image_path = Path(image_path)
 
     if not image_path.exists():
-        raise FileNotFoundError(f"Image does not exist: {image_path}")
+        raise FileNotFoundError(
+            f"Image does not exist: {image_path}"
+        )
 
     upload_url, image_urn = initialize_image_upload(
         access_token,
@@ -72,14 +89,18 @@ def upload_image(access_token, member_urn, image_path):
         response = requests.put(
             upload_url,
             headers={
-                "Authorization": f"Bearer {access_token}",
                 "Content-Type": "image/png",
             },
             data=image,
             timeout=120,
         )
 
-    response.raise_for_status()
+    if not response.ok:
+        raise RuntimeError(
+            f"LinkedIn image upload failed "
+            f"({response.status_code}):\n"
+            f"{response.text}"
+        )
 
     return image_urn
 
@@ -122,13 +143,19 @@ def create_post(
 
     if not response.ok:
         raise RuntimeError(
-            f"LinkedIn post failed " f"({response.status_code}):\n" f"{response.text}"
+            f"LinkedIn post failed "
+            f"({response.status_code}):\n"
+            f"{response.text}"
         )
 
     return response.headers.get("x-restli-id")
 
 
-def post(caption, image_path, alt_text="LeetCode solution"):
+def post(
+    caption,
+    image_path,
+    alt_text="LeetCode solution",
+):
     access_token = get_access_token()
 
     member_urn = get_member_urn(access_token)
