@@ -3,16 +3,24 @@ from pathlib import Path
 
 from linkedin import post
 
-CAPTIONS_DIR = Path("captions")
-IMAGES_DIR = Path("images")
-POSTED_FILE = Path("posted.json")
+
+BASE_DIR = Path(__file__).resolve().parent
+
+CAPTIONS_DIR = BASE_DIR / "captions"
+IMAGES_DIR = BASE_DIR / "images"
+POSTED_FILE = BASE_DIR / "posted.json"
 
 
 def load_posted():
     if not POSTED_FILE.exists():
         return set()
 
-    data = json.loads(POSTED_FILE.read_text(encoding="utf-8"))
+    try:
+        data = json.loads(
+            POSTED_FILE.read_text(encoding="utf-8")
+        )
+    except (json.JSONDecodeError, OSError):
+        return set()
 
     return set(data.get("posted", []))
 
@@ -30,7 +38,10 @@ def save_posted(posted):
 def main():
     posted = load_posted()
 
-    caption_files = sorted(CAPTIONS_DIR.glob("*.txt"))
+    caption_files = sorted(
+        CAPTIONS_DIR.glob("*.txt"),
+        key=lambda file: file.name,
+    )
 
     for caption_file in caption_files:
         name = caption_file.stem
@@ -44,7 +55,13 @@ def main():
             print(f"Missing image for: {name}")
             continue
 
-        caption = caption_file.read_text(encoding="utf-8").strip()
+        caption = caption_file.read_text(
+            encoding="utf-8"
+        ).strip()
+
+        if not caption:
+            print(f"Empty caption for: {name}")
+            continue
 
         print(f"Posting: {name}")
 
