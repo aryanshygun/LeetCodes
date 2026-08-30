@@ -1,0 +1,51 @@
+name: LinkedIn Daily Post
+
+on:
+  schedule:
+    - cron: "0 21 * * *"
+      timezone: "Europe/Berlin"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Post to LinkedIn
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_VERSION: "202608"
+        run: |
+          python main.py
+
+      - name: Save posting state
+        run: |
+          git config user.name "linkedin-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add posted.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to posted.json"
+          else
+            git commit -m "Update LinkedIn posting state"
+            git push
+          fi

@@ -1,0 +1,1 @@
+First approach used a list to track unique characters, looping through the string and adding new ones. Second version uses Python's set for simplicity and efficiency. Both aim to count distinct characters. O(n) time and space for both. #LeetCode #Python #算法练习

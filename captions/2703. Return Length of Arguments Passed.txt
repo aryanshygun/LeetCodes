@@ -1,0 +1,1 @@
+Used spread syntax to capture all arguments into an array, then returned the length. Simple and direct. O(n) time and O(n) space. #LeetCode #JavaScript # coding

@@ -1,0 +1,1 @@
+Modified the salary column by multiplying each value by two directly in the DataFrame. simple and efficient, O(n) time and O(1) space for the operation. #LeetCode #Python #DataFrames

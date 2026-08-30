@@ -1,0 +1,1 @@
+Solved Two Sum with a brute-force approach: iterate through each number, check if the complement exists in the list, and return indices once found. Liked the simplicity, though the time complexity is O(n²) due to the index lookup. #LeetCode #TwoSum #Python programming

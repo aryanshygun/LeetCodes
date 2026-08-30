@@ -1,0 +1,1 @@
+Convertible temps. added 273.15 for Kelvin, multiplied by 1.8 and added 32 for Fahrenheit. Straightforward calculations, O(1) time and space. #LeetCode #Python #CodePractice

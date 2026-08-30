@@ -1,0 +1,1 @@
+Solved 624 by tracking min and max arrays, then finding the max difference between a max from one array and min from another. The code popped elements to avoid pairing with the same array. O(n) time and space. #LeetCode #Python #SoftwareEngineering

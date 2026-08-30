@@ -1,0 +1,1 @@
+Solved 3110 by iterating through the string pairwise, calculating absolute differences between consecutive characters and summing them up. O(n) time, O(1) space. #LeetCode # Python #SoftwareEngineering

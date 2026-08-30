@@ -15,4 +15,3 @@ class Solution:
 
             count = max(count, len(x))
         return count
-

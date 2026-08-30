@@ -1,0 +1,1 @@
+Tracked counts of 0s and 1s as I iterated through the string. Checked balance between them at each step to determine valid prefixes. O(n) time, O(1) space. #LeetCode #Python # coding挑战
