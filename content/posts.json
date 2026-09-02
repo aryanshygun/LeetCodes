@@ -1,0 +1,83 @@
+{
+    "1441. Build an Array With Stack Operations.py": {
+        "title": "LeetCode 1441. Build an Array With Stack Operations",
+        "difficulty": "Medium",
+        "posted": false,
+        "posted_at": null,
+        "caption": "LeetCode 1441. Build an Array With Stack Operations\n\nDifficulty: Medium\n\nThe problem requires building an array by simulating stack operations where you push elements and pop them when needed. The approach iterates through each number up to the target's maximum value, pushing whenever the number is in the target and popping otherwise. The implementation checks for presence in the target list, which could be inefficient for large targets. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=1441.+Build+an+Array+With+Stack+Operations",
+        "code": "content/codes/finished/medium/1441. Build an Array With Stack Operations.py",
+        "image": "content/images/1441. Build an Array With Stack Operations.png"
+    },
+    "150. Evaluate Reverse Polish Notation.py": {
+        "title": "LeetCode 150. Evaluate Reverse Polish Notation",
+        "difficulty": "Medium",
+        "posted": false,
+        "posted_at": null,
+        "caption": "LeetCode 150. Evaluate Reverse Polish Notation\n\nDifficulty: Medium\n\nThe problem involves evaluating a mathematical expression given in reverse Polish notation, where operators follow their operands. The solution uses a stack to process tokens, pushing numbers and applying operations when encountering operators. The implementation directly accesses the last two elements of the stack for calculations, which simplifies indexing but may slightly reduce readability.\n\n#LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=150.+Evaluate+Reverse+Polish+Notation",
+        "code": "content/codes/finished/medium/150. Evaluate Reverse Polish Notation.py",
+        "image": "content/images/150. Evaluate Reverse Polish Notation.png"
+    },
+    "2452. Words Within Two Edits of Dictionary.py": {
+        "title": "LeetCode 2452. Words Within Two Edits of Dictionary",
+        "difficulty": "Medium",
+        "posted": false,
+        "posted_at": null,
+        "caption": "LeetCode 2452. Words Within Two Edits of Dictionary\n\nDifficulty: Medium\n\nThe problem checks which words from a list can be converted into another word with at most two edits. The approach iterates over each query and dictionary word, comparing characters position by position to count differences. If the difference is within two, the query word is added to the result. The nested loops make this O(N*M) where N is queries and M is dictionary size, which is straightforward but not optimized for very large inputs. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=2452.+Words+Within+Two+Edits+of+Dictionary",
+        "code": "content/codes/finished/medium/2452. Words Within Two Edits of Dictionary.py",
+        "image": "content/images/2452. Words Within Two Edits of Dictionary.png"
+    },
+    "3. Longest Substring Without Repeating Characters.py": {
+        "title": "LeetCode 3. Longest Substring Without Repeating Characters",
+        "difficulty": "Medium",
+        "posted": false,
+        "posted_at": null,
+        "caption": "LeetCode 3. Longest Substring Without Repeating Characters\n\nDifficulty: Medium\n\nSliding window approach with a list to track characters. The code uses a fixed-size window and updates it by removing characters from the start when duplicates are found. The list operations contribute to O(n) time complexity but with higher constants compared to optimal solutions. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=3.+Longest+Substring+Without+Repeating+Characters",
+        "code": "content/codes/finished/medium/3. Longest Substring Without Repeating Characters.py",
+        "image": "content/images/3. Longest Substring Without Repeating Characters.png"
+    },
+    "3760. Maximum Substrings With Distinct Start.py": {
+        "title": "LeetCode 3760. Maximum Substrings With Distinct Start",
+        "difficulty": "Medium",
+        "posted": false,
+        "posted_at": null,
+        "caption": "LeetCode 3760. Maximum Substrings With Distinct Start\n\nDifficulty: Medium\n\nThe problem asks for the maximum number of distinct characters in a string. The first approach builds a list incrementally, adding characters only if they haven't been seen before. The second approach uses Python's set to achieve the same result more succinctly. Sets inherently handle uniqueness, making the second solution more efficient in terms of time and space complexity. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=3760.+Maximum+Substrings+With+Distinct+Start",
+        "code": "content/codes/finished/medium/3760. Maximum Substrings With Distinct Start.py",
+        "image": "content/images/3760. Maximum Substrings With Distinct Start.png"
+    },
+    "503. Next Greater Element II.py": {
+        "title": "LeetCode 503. Next Greater Element II",
+        "difficulty": "Medium",
+        "posted": false,
+        "posted_at": null,
+        "caption": "LeetCode 503. Next Greater Element II\n\nDifficulty: Medium\n\nThis problem requires finding the next greater element for each position in a circular array. The solution uses a single pass with a stack to track indices and efficiently compute the results. By iterating twice the length of the array, it handles the circular nature without additional space. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=503.+Next+Greater+Element+II",
+        "code": "content/codes/finished/medium/503. Next Greater Element II.py",
+        "image": "content/images/503. Next Greater Element II.png"
+    },
+    "624. Maximum Distance in Arrays.py": {
+        "title": "LeetCode 624. Maximum Distance in Arrays",
+        "difficulty": "Medium",
+        "posted": false,
+        "posted_at": null,
+        "caption": "LeetCode 624. Maximum Distance in Arrays\n\nDifficulty: Medium\n\nThe problem involves finding the maximum distance between the minimum and maximum values across multiple arrays. The solution computes min and max for each array, then calculates the largest difference between a max from one array and a min from another. The approach uses nested list operations to find the optimal pair efficiently. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=624.+Maximum+Distance+in+Arrays",
+        "code": "content/codes/finished/medium/624. Maximum Distance in Arrays.py",
+        "image": "content/images/624. Maximum Distance in Arrays.png"
+    },
+    "636. Exclusive Time of Functions.py": {
+        "title": "LeetCode 636. Exclusive Time of Functions",
+        "difficulty": "Medium",
+        "posted": false,
+        "posted_at": null,
+        "caption": "LeetCode 636. Exclusive Time of Functions\n\nDifficulty: Medium\n\nThe problem tracks the exclusive time each function runs given a log of function calls and execution times. The solution uses a stack to track active functions and calculates time differences between log entries. The key detail is adjusting the end time by +1 to account for the current log entry being processed. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=636.+Exclusive+Time+of+Functions",
+        "code": "content/codes/finished/medium/636. Exclusive Time of Functions.py",
+        "image": "content/images/636. Exclusive Time of Functions.png"
+    },
+    "739. Daily Temperatures.py": {
+        "title": "LeetCode 739. Daily Temperatures",
+        "difficulty": "Medium",
+        "posted": false,
+        "posted_at": null,
+        "caption": "LeetCode 739. Daily Temperatures\n\nDifficulty: Medium\n\nThe Daily Temperatures problem requires finding how many days until a warmer temperature for each day. The solution uses a stack to track indices of temperatures, updating the output when a warmer temperature is found. The stack ensures efficient processing by avoiding unnecessary comparisons. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=739.+Daily+Temperatures",
+        "code": "content/codes/finished/medium/739. Daily Temperatures.py",
+        "image": "content/images/739. Daily Temperatures.png"
+    }
+}

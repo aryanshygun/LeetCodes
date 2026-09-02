@@ -1,1 +1,0 @@
-I brute force checked each word against every dict entry, counting differing characters. If a word could be fixed in two edits or less, it was added to the result. O(n*m) time where n is queries and m is dict size. #LeetCode #Python #Code practice

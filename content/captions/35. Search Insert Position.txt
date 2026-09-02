@@ -1,1 +1,0 @@
-Solved LeetCode 35 using binary search. The code checks mid values, adjusting left or right pointers based on comparison with target. If target isn't found, returns the position where it should be inserted. O(log n) time, O(1) space. #LeetCode #BinarySearch #PythonProgramming

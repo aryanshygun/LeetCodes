@@ -1,1 +1,0 @@
-Used pandas' head method to return the first three rows of the DataFrame. Simple and efficient, O(1) space complexity. #LeetCode #Python #DataFrames
