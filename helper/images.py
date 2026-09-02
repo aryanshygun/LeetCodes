@@ -2,7 +2,6 @@ import re
 
 from playwright.sync_api import Page, Playwright
 
-
 RAYSO_URL = "https://ray.so/"
 
 THEMES = [
@@ -67,11 +66,7 @@ def generate_image(page: Page, file, output, theme):
     title_input.fill(title)
     textarea.fill(code)
 
-    combobox = page.get_by_role(
-        "combobox"
-    ).filter(
-        has_text=re.compile(r"^$")
-    )
+    combobox = page.get_by_role("combobox").filter(has_text=re.compile(r"^$"))
 
     combobox.wait_for(
         state="visible",
@@ -120,9 +115,7 @@ def generate_images(playwright: Playwright, files, images_dir):
         exist_ok=True,
     )
 
-    browser = playwright.chromium.launch(
-        headless=False
-    )
+    browser = playwright.chromium.launch(headless=False)
 
     try:
         for file, theme in files:
@@ -164,8 +157,7 @@ def generate_images(playwright: Playwright, files, images_dir):
 
             if not success:
                 raise RuntimeError(
-                    f"Could not generate image for "
-                    f"{file.name} after 3 attempts."
+                    f"Could not generate image for {file.name} after 3 attempts."
                 )
 
     finally:

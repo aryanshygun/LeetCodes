@@ -3,7 +3,6 @@ from pathlib import Path
 
 import requests
 
-
 LINKEDIN_API = "https://api.linkedin.com"
 LINKEDIN_VERSION = os.getenv("LINKEDIN_VERSION", "202608")
 

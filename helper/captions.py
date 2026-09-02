@@ -3,7 +3,6 @@ import time
 
 from openai import OpenAI
 
-
 MODEL = "qwen_3_4b-safetensors"
 
 

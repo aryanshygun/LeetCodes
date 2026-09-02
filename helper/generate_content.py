@@ -1,11 +1,9 @@
 import hashlib
 from pathlib import Path
 
-from playwright.sync_api import sync_playwright
-
 from captions import create_post
 from images import THEMES, generate_images
-
+from playwright.sync_api import sync_playwright
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
