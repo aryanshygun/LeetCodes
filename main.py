@@ -6,8 +6,11 @@ from helper.linkedin import post
 
 BASE_DIR = Path(__file__).resolve().parent
 
-CAPTIONS_DIR = BASE_DIR / "captions"
-IMAGES_DIR = BASE_DIR / "images"
+FINISHED_DIR = BASE_DIR / "Leetcode" / "finished"
+
+CAPTIONS_DIR = FINISHED_DIR / "captions"
+
+IMAGES_DIR = FINISHED_DIR / "images"
 POSTED_FILE = BASE_DIR / "posted.json"
 
 
