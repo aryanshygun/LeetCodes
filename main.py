@@ -3,14 +3,10 @@ from pathlib import Path
 
 from helper.linkedin import post
 
-
 BASE_DIR = Path(__file__).resolve().parent
-
-FINISHED_DIR = BASE_DIR / "Leetcode" / "finished"
-
-CAPTIONS_DIR = FINISHED_DIR / "captions"
-
-IMAGES_DIR = FINISHED_DIR / "images"
+FINISHED_DIR = BASE_DIR / "finished"
+CAPTIONS_DIR = BASE_DIR / "content" / "captions"
+IMAGES_DIR = BASE_DIR / "content" / "images"
 POSTED_FILE = BASE_DIR / "posted.json"
 
 
@@ -19,9 +15,7 @@ def load_posted():
         return set()
 
     try:
-        data = json.loads(
-            POSTED_FILE.read_text(encoding="utf-8")
-        )
+        data = json.loads(POSTED_FILE.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
         return set()
 
@@ -30,10 +24,7 @@ def load_posted():
 
 def save_posted(posted):
     POSTED_FILE.write_text(
-        json.dumps(
-            {"posted": sorted(posted)},
-            indent=2,
-        ),
+        json.dumps({"posted": sorted(posted)}, indent=2),
         encoding="utf-8",
     )
 
@@ -41,10 +32,7 @@ def save_posted(posted):
 def main():
     posted = load_posted()
 
-    caption_files = sorted(
-        CAPTIONS_DIR.glob("*.txt"),
-        key=lambda file: file.name,
-    )
+    caption_files = sorted(CAPTIONS_DIR.glob("*.txt"), key=lambda file: file.name)
 
     for caption_file in caption_files:
         name = caption_file.stem
@@ -58,9 +46,7 @@ def main():
             print(f"Missing image for: {name}")
             continue
 
-        caption = caption_file.read_text(
-            encoding="utf-8"
-        ).strip()
+        caption = caption_file.read_text(encoding="utf-8").strip()
 
         if not caption:
             print(f"Empty caption for: {name}")
