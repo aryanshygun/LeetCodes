@@ -2,8 +2,8 @@
     "1441. Build an Array With Stack Operations.py": {
         "title": "LeetCode 1441. Build an Array With Stack Operations",
         "difficulty": "Medium",
-        "posted": false,
-        "posted_at": null,
+        "posted": true,
+        "posted_at": "2026-09-03T19:07:07.823763+00:00",
         "caption": "LeetCode 1441. Build an Array With Stack Operations\n\nDifficulty: Medium\n\nThe problem requires building an array by simulating stack operations where you push elements and pop them when needed. The approach iterates through each number up to the target's maximum value, pushing whenever the number is in the target and popping otherwise. The implementation checks for presence in the target list, which could be inefficient for large targets. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=1441.+Build+an+Array+With+Stack+Operations",
         "code": "content/codes/finished/medium/1441. Build an Array With Stack Operations.py",
         "image": "content/images/1441. Build an Array With Stack Operations.png"
