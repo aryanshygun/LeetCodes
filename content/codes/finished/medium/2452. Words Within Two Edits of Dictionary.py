@@ -1,4 +1,4 @@
-from typing import list
+from ast import List
 
 
 class Solution:

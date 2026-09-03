@@ -1,29 +1,15 @@
-n = 124651
+ans = float("inf")
+mln = float("inf")
+mnw = float("inf")
 
-stack = []
-check = (-1, -1)
-n = reversed(list(str(n)))
-n = [int(i) for i in n]
-# nlist = [n[i] for i in range(len(str(n)))]
+for i in range(len(landStartTime)):
+    mln = min(mln, landStartTime[i] + landDuration[i])
 
-xmin = (0, 0)
-xmax = (0, 0)
+for i in range(len(waterStartTime)):
+    ans = min(ans, max(mln, waterStartTime[i]) + waterDuration[i])
 
-print(n)
-# value = val 
+for i in range(len(waterStartTime)):
+    mnw = min(mnw, waterStartTime[i] + waterDuration[i])
 
-for i in range(len(n)):
-    if n[i] < xmin[1]:
-        xmin = (i, n[i])
-        break
-    else:
-        xmin = (i, n[i])
-    
-
-
-# for idx, val in enumerate(n):
-#     print(idx, val)
-    
-#     # while stack and val < stack[-1]:
-#     #     pass
-#     # stack.append(i)
+for i in range(len(landStartTime)):
+    ans = min(ans, max(mnw, landStartTime[i]) + landDuration[i])
