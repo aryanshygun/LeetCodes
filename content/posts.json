@@ -11,8 +11,8 @@
     "150. Evaluate Reverse Polish Notation.py": {
         "title": "LeetCode 150. Evaluate Reverse Polish Notation",
         "difficulty": "Medium",
-        "posted": false,
-        "posted_at": null,
+        "posted": true,
+        "posted_at": "2026-09-04T17:42:23.233554+00:00",
         "caption": "LeetCode 150. Evaluate Reverse Polish Notation\n\nDifficulty: Medium\n\nThe problem involves evaluating a mathematical expression given in reverse Polish notation, where operators follow their operands. The solution uses a stack to process tokens, pushing numbers and applying operations when encountering operators. The implementation directly accesses the last two elements of the stack for calculations, which simplifies indexing but may slightly reduce readability.\n\n#LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=150.+Evaluate+Reverse+Polish+Notation",
         "code": "content/codes/finished/medium/150. Evaluate Reverse Polish Notation.py",
         "image": "content/images/150. Evaluate Reverse Polish Notation.png"
