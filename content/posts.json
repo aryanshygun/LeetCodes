@@ -20,8 +20,8 @@
     "2452. Words Within Two Edits of Dictionary.py": {
         "title": "LeetCode 2452. Words Within Two Edits of Dictionary",
         "difficulty": "Medium",
-        "posted": false,
-        "posted_at": null,
+        "posted": true,
+        "posted_at": "2026-09-05T16:54:02.488094+00:00",
         "caption": "LeetCode 2452. Words Within Two Edits of Dictionary\n\nDifficulty: Medium\n\nThe problem checks which words from a list can be converted into another word with at most two edits. The approach iterates over each query and dictionary word, comparing characters position by position to count differences. If the difference is within two, the query word is added to the result. The nested loops make this O(N*M) where N is queries and M is dictionary size, which is straightforward but not optimized for very large inputs. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=2452.+Words+Within+Two+Edits+of+Dictionary",
         "code": "content/codes/finished/medium/2452. Words Within Two Edits of Dictionary.py",
         "image": "content/images/2452. Words Within Two Edits of Dictionary.png"
