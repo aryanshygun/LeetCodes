@@ -29,8 +29,8 @@
     "3. Longest Substring Without Repeating Characters.py": {
         "title": "LeetCode 3. Longest Substring Without Repeating Characters",
         "difficulty": "Medium",
-        "posted": false,
-        "posted_at": null,
+        "posted": true,
+        "posted_at": "2026-09-06T17:15:18.796797+00:00",
         "caption": "LeetCode 3. Longest Substring Without Repeating Characters\n\nDifficulty: Medium\n\nSliding window approach with a list to track characters. The code uses a fixed-size window and updates it by removing characters from the start when duplicates are found. The list operations contribute to O(n) time complexity but with higher constants compared to optimal solutions. #LeetCode #Python #Algorithms\n\nhttps://leetcode.com/search/?q=3.+Longest+Substring+Without+Repeating+Characters",
         "code": "content/codes/finished/medium/3. Longest Substring Without Repeating Characters.py",
         "image": "content/images/3. Longest Substring Without Repeating Characters.png"
